@@ -32,4 +32,12 @@ public class Member extends Timestamped{
         this.title = requestDto.getTitle();
         this.contents = requestDto.getContents();
     }
+
+    public void update(CrudRequestDto requestDto) {
+        this.username = requestDto.getUsername();
+        this.password = requestDto.getPassword();
+        this.title = requestDto.getTitle();
+        this.contents = requestDto.getContents();
+    }
+
 }
