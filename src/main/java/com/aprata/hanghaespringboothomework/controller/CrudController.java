@@ -1,6 +1,7 @@
 package com.aprata.hanghaespringboothomework.controller;
 
 import com.aprata.hanghaespringboothomework.dto.CrudPasswordDto;
+import com.aprata.hanghaespringboothomework.dto.CrudRequestBody;
 import com.aprata.hanghaespringboothomework.dto.CrudRequestDto;
 import com.aprata.hanghaespringboothomework.dto.CrudResponseDto;
 import com.aprata.hanghaespringboothomework.entity.Member;
@@ -35,15 +36,18 @@ public class CrudController {
     public List<Member> getCrud(){
         return crudService.getCrud();
     }
+//    @PutMapping("/crud/{id}")
+//    public String updateCrud(@PathVariable Long id, @RequestBody ObjectNode objectNode) throws JsonProcessingException {
+//        ObjectMapper mapper = new ObjectMapper();
+//        CrudRequestDto requestDto = mapper.treeToValue(objectNode.get("requestDto"),CrudRequestDto.class);
+//        CrudPasswordDto passwordDto = mapper.treeToValue(objectNode.get("passwordDto"),CrudPasswordDto.class);
+//
+//        return crudService.updateCrud(id, requestDto, passwordDto);
+//    }
     @PutMapping("/crud/{id}")
-    public String updateCrud(@PathVariable Long id, @RequestBody ObjectNode objectNode) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        CrudRequestDto requestDto = mapper.treeToValue(objectNode.get("requestDto"),CrudRequestDto.class);
-        CrudPasswordDto passwordDto = mapper.treeToValue(objectNode.get("passwordDto"),CrudPasswordDto.class);
-
-        return crudService.updateCrud(id, requestDto, passwordDto);
+    public String updateCrud(@PathVariable Long id, @RequestBody CrudRequestBody requestBody){
+        return crudService.updateCrud(id, requestBody.getCrudRequestDto(), requestBody.getCrudPasswordDto());
     }
-
     @DeleteMapping("/crud/{id}")
     public String delete(@PathVariable Long id, @RequestBody CrudPasswordDto passwordDto){
         return crudService.deleteCrud(id, passwordDto);

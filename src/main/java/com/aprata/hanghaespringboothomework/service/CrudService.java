@@ -16,7 +16,6 @@ import java.util.List;
 public class CrudService {
     private final CrudRepository crudRepository; // 레포지토리 사용이 가능하도록 선언
 
-
     @Transactional
     public CrudResponseDto createCrud(CrudRequestDto requestDto) {
         Member member = new Member(requestDto);
@@ -61,5 +60,4 @@ public class CrudService {
             return false;
         }
     }
-
 }
