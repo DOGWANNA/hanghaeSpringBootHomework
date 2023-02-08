@@ -21,7 +21,7 @@ public class CrudService {
         Member member = new Member(requestDto);
         crudRepository.save(member); // 자동으로 쿼리가 생성되며 데이터베이스에 연결
 
-        return new CrudResponseDto().entityToDto(member); //Dto를 새롭게 생성하면서 entity를 Dto로 변환하여 전달
+        return new CrudResponseDto().entityToDto(member); //Dto객체를 생성하면서 entity를 Dto로 변환하여 전달
     }
 
     @Transactional(readOnly = true)

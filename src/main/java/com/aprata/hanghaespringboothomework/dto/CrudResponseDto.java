@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 public class CrudResponseDto {
     private String username;
     private String password;
-    // 패스워드는 사용하지 않으므로 제외함.
     private String title;
     private String contents;
 

@@ -36,6 +36,7 @@ public class CrudController {
     public List<Member> getCrud(){
         return crudService.getCrud();
     }
+
 //    @PutMapping("/crud/{id}")
 //    public String updateCrud(@PathVariable Long id, @RequestBody ObjectNode objectNode) throws JsonProcessingException {
 //        ObjectMapper mapper = new ObjectMapper();

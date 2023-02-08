@@ -11,7 +11,10 @@ import java.time.LocalDateTime;
 
 @MappedSuperclass
 @Getter
-@EntityListeners(AuditingEntityListener.class) //EntityListeners 사용을 위한 설정 필요 application.properties에 설정 + Application 파일에 @EnableJpaAuditing 추가
+@EntityListeners(AuditingEntityListener.class)
+//EntityListeners 사용을 위한 설정 필요
+// application.properties에 설정 +
+// Application 파일에 @EnableJpaAuditing 추가
 public class Timestamped {
 
     @CreatedDate
